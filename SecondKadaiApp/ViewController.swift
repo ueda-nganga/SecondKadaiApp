@@ -13,7 +13,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    @IBOutlet weak var text: UITextField!
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let resultViewController:ResultViewController = segue.destination as! ResultViewController
+        resultViewController.name = text.text!
+    }
 
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
 
 }
-
